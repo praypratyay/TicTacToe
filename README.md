@@ -4,71 +4,61 @@
 
 TicTacToe is a X/O game that two people play on 3x3 grid and three consecutive Xs or Os in a straight line determines the winner of the game. 
 
-This seems like a software system thats takes input. No need to persist data.
+![Image](./tic_tac_toe.jpg "RED")
+
+This seems like a software design system thats takes input. No need to persist data.
 
 ## Requirements and Clarifications
 
-_**Should I restrict the size of grid to 3x3?**_
+**Q) Should I restrict the size of grid to 3x3?**
 
-_No, Lets do it nXn_
+- _No, lets do it nXn._
 
+**Q) Should this game has only two players?**
 
-_**Should this game has only two players?**_
+- _n-1_
 
-_n-1_
+**Q) Do we want to support bots with varying difficulty level?**
 
+- _Yes, at max keep one bot per game._.
 
-_**We want to support bots with varying difficulty level**_
+**Q) How should we represent players?**
 
-_At max keep one bot per game._.
+- _Every player has a different symbol. Probably a char/string. Validate this._
 
+**Q) Are we supporting tounaments or keeping a leaderboard?**
 
-_**Every player has a different symbol. Probably a char/string. Validate this.**_
+- _No_
 
+**Q) Can a player do UNDO?**
 
-_**Are we supporting tounaments or keeping a leaderboard?**_
+- _Yes, its a global undo that any player can do._
 
-_No_
+**Q) Do we want to keep a time limit on the move?**
 
+- _No_
 
-_**Can a player do UNDO?**_
+**Q) How will the game start?**
 
-_Yes, its a global undo that any player can do._
+- _Suppose, we have five players A,B,C,D,E. Then we randombly order these players say D,B,A,C,E and they will follow this order for their turn._
 
+**Q) When will the game end?**
 
-_**Do we want to keep a time limit on the move?**_
+- _We will end the game when someone has won or there is a draw. And not when all but one has won._
 
-_No_
+**Q) What decides a victory in the game?**
 
+- _We should allow to add new ways in which can someone can win. Like all corners of the grid have same symbol. And when we start the game, we configure ways in which a player can win._
 
-_**When/how will the game start?**_
+**Q) What to do if someone exits?**
 
-_Suppose, we have five players A,B,C,D,E. Then we randombly order these players say D,B,A,C,E and they will follow this order for their turn._
+- _End the game, or remove their symbols, replace them by bot. Dont support this._
 
+**Q) Should we allow replay?**
 
-_**When/how will the game end?**_
+- _Yes_
 
-_We will end the game when someone has won or there is a draw. And not when all but one has won._
-
-
-_**What decides a victory in the game?**_
-
-_We should allow to add new ways in which can someone can win. Like all corners of the grid have same symbol. And when we start the game, we configure ways in which a player can win._
-
-
-_**What to do if someone exits?**_
-
-_End the game, or remove their symbols, replace them by bot. Dont support this._
-
-
-_**Should we allow replay?**_
-
-_Yes_
-
-![Image](./tic_tac_toe.jpg "RED")
-
-
-## Classes
+## Interfaces - Classes - Attributes 
 
 ### Board
 - Size
@@ -132,6 +122,5 @@ _Yes_
 
 ## Notes
 
-1. When UNDO happens, clear cell, remove move from list of moves and 
-move turn to the previous player. But UNDO moves in games like Chess is complicated.
+- When UNDO happens, clear cell, remove current move from list of moves and move turn to the previous player. But UNDO moves in games like Chess is complicated. In that case, store the state of board and not just the moves.
 
