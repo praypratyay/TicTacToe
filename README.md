@@ -122,6 +122,8 @@ This seems like a software design system thats takes input. No need to persist d
 
 ## Notes
 
+- 
+
 - When UNDO happens, clear cell, remove current move from list of moves and move turn to the previous player. But UNDO moves in games like Chess is complicated. In that case, store the state of board and not just the moves.
 
 - After every move we have to check if someone has won, and update the state of game if it happens.
@@ -133,3 +135,8 @@ This seems like a software design system thats takes input. No need to persist d
 - **Approach 3**: If a player makes a move at a particular cell (i,j), then the victory can happen in only 4 ways(that particular row or that particular column or the two diagonals). Ane checking each of this step requires TC of O(n). *[4 x no_rows]*
 
 - **Approach 4**: Have a dictionary for all rows, columns and diagonals. Each dictionary has a symbol as a key and count of that symbol in that line as value. After each move, we update the all related dicts. Updating and checking dict requires O(1) time. So we can check winner where the value of a particular key becomes N. As a result, TC becomes O(1) but SC becomes O(n<sup>2</sup>) *[no_of_maps x space_for_each_map]*
+
+## HOW TO RUN?
+```python 
+python3 client.py
+```

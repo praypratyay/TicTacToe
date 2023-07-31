@@ -1,21 +1,5 @@
-from models import *
-
-class WinningStrategy:
-
-    def checkWinner(self, board, last_move):
-        pass
-
-class RowWinningStrategy(WinningStrategy):
-    def checkWinner(self, board, last_move):
-        return False
-
-class ColumnWinningStrategy(WinningStrategy):
-    def checkWinner(self, board, last_move):
-        return False
-
-class DiagonalWinningStrategy(WinningStrategy):
-    def checkWinner(self, board, last_move):
-        return False
+from abc import abstractmethod
+from models.enums import CellState
 
 class BotPlayingStrategy:
 
@@ -26,7 +10,11 @@ class BotPlayingStrategy:
 class EASYBotPlayingStrategy(BotPlayingStrategy):
     
     def makeMove(self, board):
-        return None
+        for i in range(board.size):
+            for j in range(board.size):
+                if (board.grid[i][j].state == CellState.EMPTY):
+                    return board.grid[i][j]
+        return None # The code never comes here.
 
 class MEDIUMBotPlayingStrategy(BotPlayingStrategy):
     
@@ -37,13 +25,16 @@ class HARDBotPlayingStrategy(BotPlayingStrategy):
     
     def makeMove(self, board):
         return None
-
-class BotPlayingStrategyFactory:
     
-    def getBotPlayingStrategyforDifficultyLevel(self, dl):
+class BotPlayingStrategyFactory:
+    """ For simplifying we will return one strategy """
+    def getBotPlayingStrategyforDifficultyLevel(dl):
+        return EASYBotPlayingStrategy()
+        """
         if (dl == DifficultyLevel.EASY) :
             return EASYBotPlayingStrategy()
         elif (dl == DifficultyLevel.MEDIUM) :
             return MEDIUMBotPlayingStrategy()
         else :
             return HARDBotPlayingStrategy()
+        """
