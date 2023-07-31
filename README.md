@@ -122,8 +122,6 @@ This seems like a software design system thats takes input. No need to persist d
 
 ## Notes
 
-- 
-
 - When UNDO happens, clear cell, remove current move from list of moves and move turn to the previous player. But UNDO moves in games like Chess is complicated. In that case, store the state of board and not just the moves.
 
 - After every move we have to check if someone has won, and update the state of game if it happens.
