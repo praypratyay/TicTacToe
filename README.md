@@ -1,10 +1,10 @@
-# Design TicTacToe (Low Level Design)
+# Design Tic-Tac-Toe (Low Level Design)
 
 ## **OVERVIEW**
 
 TicTacToe is a X/O game that two people play on 3x3 grid and three consecutive Xs or Os in a straight line determines the winner of the game. 
 
-![Image](./tic_tac_toe.jpg "RED")
+![Image](./tic_tac_toe.jpg "tictactoe")
 
 This seems like a software design system thats takes input. No need to persist data.
 
