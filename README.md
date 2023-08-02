@@ -4,7 +4,9 @@
 
 TicTacToe is a X/O game that two people play on 3x3 grid and three consecutive Xs or Os in a straight line determines the winner of the game. 
 
-![Image](./tic_tac_toe.jpg "tictactoe")
+<p>
+    <img src="tic_tac_toe.jpg" width="1000" height="500" />
+</p>
 
 This seems like a software design system thats takes input. No need to persist data.
 
