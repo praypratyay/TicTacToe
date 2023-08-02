@@ -60,7 +60,7 @@ This seems like a software design system thats takes input. No need to persist d
 
 - _Yes_
 
-## Interfaces - Classes - Attributes 
+## Classes - Attributes - Interfaces 
 
 ### Board
 - Size
@@ -100,7 +100,7 @@ This seems like a software design system thats takes input. No need to persist d
 - Board
 - Moves (list of Move)
 - Players (list of Player)
-- currentPlayerindex (We already have a list of players)
+- currentPlayerindex (we already have a list of players)
 - WinningStrategies (list of WinningStrategy)
 - GameStatus 
 - Winner
@@ -119,6 +119,8 @@ This seems like a software design system thats takes input. No need to persist d
 - #### EASYBotPlayingStrategy (BotPlayingStrategy)
 - #### MEDIUMBotPlayingStrategy (BotPlayingStrategy)
 - #### HARDBotPlayingStrategy (BotPlayingStrategy)
+
+### BotPlayingStrategyFactory
 
 ### GAMEBuilder (for Validation)
 
