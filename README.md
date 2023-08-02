@@ -2,7 +2,7 @@
 
 ## **OVERVIEW**
 
-TicTacToe is a X/O game that two people play on 3x3 grid and three consecutive Xs or Os in a straight line determines the winner of the game. 
+> TicTacToe is a X/O game that two people play on 3x3 grid and three consecutive Xs or Os in a straight line determines the winner of the game. 
 
 <p>
     <img src="tic_tac_toe.jpg" width="1000" height="500" />
@@ -14,51 +14,51 @@ This seems like a software design system thats takes input. No need to persist d
 
 **Q) Should I restrict the size of grid to 3x3?**
 
-- _No, lets do it nXn._
+> _No, lets do it nXn._
 
 **Q) Should this game has only two players?**
 
-- _n-1_
+> _n-1_
 
 **Q) Do we want to support bots with varying difficulty level?**
 
-- _Yes, at max keep one bot per game._.
+> _Yes, at max keep one bot per game._.
 
 **Q) How should we represent players?**
 
-- _Every player has a different symbol. Probably a char/string. Validate this._
+> _Every player has a different symbol. Probably a char/string. Validate this._
 
 **Q) Are we supporting tounaments or keeping a leaderboard?**
 
-- _No_
+> _No_
 
 **Q) Can a player do UNDO?**
 
-- _Yes, its a global undo that any player can do._
+> _Yes, its a global undo that any player can do._
 
 **Q) Do we want to keep a time limit on the move?**
 
-- _No_
+> _No_
 
 **Q) How will the game start?**
 
-- _Suppose, we have five players A,B,C,D,E. Then we randombly order these players say D,B,A,C,E and they will follow this order for their turn._
+> _Suppose, we have five players A,B,C,D,E. Then we randombly order these players say D,B,A,C,E and they will follow this order for their turn._
 
 **Q) When will the game end?**
 
-- _We will end the game when someone has won or there is a draw. And not when all but one has won._
+> _We will end the game when someone has won or there is a draw. And not when all but one has won._
 
 **Q) What decides a victory in the game?**
 
-- _We should allow to add new ways in which can someone can win. Like all corners of the grid have same symbol. And when we start the game, we configure ways in which a player can win._
+> _We should allow to add new ways in which can someone can win. Like all corners of the grid have same symbol. And when we start the game, we configure ways in which a player can win._
 
 **Q) What to do if someone exits?**
 
-- _End the game, or remove their symbols, replace them by bot. Dont support this._
+> _End the game, or remove their symbols, replace them by bot. Dont support this._
 
 **Q) Should we allow replay?**
 
-- _Yes_
+> _Yes_
 
 ## Classes - Attributes - Interfaces 
 
@@ -67,8 +67,8 @@ This seems like a software design system thats takes input. No need to persist d
 - Grid (2D list of Cell)
 
 ### Cell
-- row
-- col
+- Row
+- Col
 - CellState
 - Player
 
@@ -81,7 +81,7 @@ This seems like a software design system thats takes input. No need to persist d
 - PlayerType
 
 ### Symbol
-- char
+- Char
 
 ### PlayerType
 - HUMAN/BOT/GUEST
