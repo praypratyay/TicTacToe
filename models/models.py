@@ -121,12 +121,12 @@ class Game:
     winner = None
     gameStatus =  None #INPROGRESS/DRAW/ENDED
 
-    def __init__(self, dimension, players, winningstrategies):
+    def __init__(self, gameBuilder):
         self.moves = []
-        self.players = players
-        self.board = Board(dimension)
+        self.players = gameBuilder.players
+        self.board = Board(gameBuilder.dimension)
         self.currentPlayerindex = 0
-        self.winningStrategies = winningstrategies
+        self.winningStrategies = gameBuilder.winningStrategies
         self.gameStatus = GameStatus.INPROGRESS
 
     def printBoard(self):
@@ -252,4 +252,4 @@ class GameBuilder():
         if (self.validate() == False):
             # Note: Handle exception in separate files.
             raise Exception("Invalid Parameters for Game")
-        return Game(self.dimension, self.players, self.winningStrategies)
+        return Game(self)
